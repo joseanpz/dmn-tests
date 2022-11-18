@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_19CA4743-47E0-4721-90B5-6C72B3ECA16C" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_0700E826-8268-48B0-9D85-9E7F3FCE2E0C" name="TDCBank" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_19CA4743-47E0-4721-90B5-6C72B3ECA16C">
+  <dmn:extensionElements/>
+  <dmn:inputData id="_DEF4C219-EF97-4426-8310-663A1C6E8437" name="Score">
+    <dmn:extensionElements/>
+    <dmn:variable id="_2C72E9C6-344E-41A9-B985-D98FFAE314F7" name="Score" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:decision id="_FFEE80C4-ADFC-49C7-9096-0FCBA8FF26C5" name="Decreto">
+    <dmn:extensionElements/>
+    <dmn:variable id="_22C864B7-8F73-4F38-B819-0AE8F99CCD30" name="Decreto" typeRef="string"/>
+    <dmn:informationRequirement id="_BC346108-84B4-488C-9F88-1B6660ED6448">
+      <dmn:requiredInput href="#_DEF4C219-EF97-4426-8310-663A1C6E8437"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_DFF02ABE-1290-47A4-80E3-FB236343AF21" hitPolicy="PRIORITY" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_DBE745B5-82EA-4032-A600-E89356E3802C">
+        <dmn:inputExpression id="_15B3DCD5-F41A-44C8-92EF-44846F82C688">
+          <dmn:text>input-1</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_E9664796-9737-4BDA-8464-A2CF002032EC"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_03ED8831-5DF0-4DCA-B352-98D8F8EC45BD">
+        <dmn:inputEntry id="_887B1C1E-D489-4CFE-B565-9EB2A21343A5">
+          <dmn:text>&gt;700</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_86B9F29A-0B79-4599-AB3C-E591CCFDA2CF">
+          <dmn:text>"Preaprobado"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_15B68058-6C37-4FA2-99CA-9CD2D8BBE2BE">
+        <dmn:inputEntry id="_352C6AE9-9C85-4A36-B7A1-3FF3264FDEEF">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_E087DF32-EBB0-467C-BFF8-1929CD0DD109">
+          <dmn:text>"Denegado"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_CEC8C1CC-816B-426A-BA75-8CC7F5C42AF6" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_DFF02ABE-1290-47A4-80E3-FB236343AF21">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_DEF4C219-EF97-4426-8310-663A1C6E8437" dmnElementRef="_DEF4C219-EF97-4426-8310-663A1C6E8437" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="489" y="203" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_FFEE80C4-ADFC-49C7-9096-0FCBA8FF26C5" dmnElementRef="_FFEE80C4-ADFC-49C7-9096-0FCBA8FF26C5" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="489" y="76" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_BC346108-84B4-488C-9F88-1B6660ED6448" dmnElementRef="_BC346108-84B4-488C-9F88-1B6660ED6448">
+        <di:waypoint x="539" y="228"/>
+        <di:waypoint x="539" y="126"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
